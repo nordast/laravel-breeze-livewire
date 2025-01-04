@@ -13,6 +13,12 @@ class TasksIndex extends Component
     public $priority;
     public $deadline;
 
+    public function save()
+    {
+        auth()->user()->tasks()->create($this->only('title', 'slug', 'description', 'status', 'priority', 'deadline'));
+
+        $this->reset();
+    }
 
     public function render()
     {

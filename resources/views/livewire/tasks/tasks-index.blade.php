@@ -1,10 +1,11 @@
 <div class="w-lg max-w-lg mx-auto pt-10">
-    <form>
+    <form  wire:submit="save">
         <div class="mb-3">
             <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                 Title
             </label>
             <input
+                wire:model="title"
                 id="title"
                 type="text"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -16,6 +17,7 @@
                 Slug
             </label>
             <input
+                wire:model="slug"
                 id="slug"
                 type="text"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -27,6 +29,7 @@
                 Description
             </label>
             <textarea
+                wire:model="description"
                 id="description"
                 type="text"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -39,6 +42,7 @@
                     Status
                 </label>
                 <select
+                    wire:model="status"
                     id="status"
                     class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 >
@@ -52,6 +56,7 @@
                     Priority
                 </label>
                 <select
+                    wire:model="priority"
                     id="priority"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 >
@@ -67,6 +72,7 @@
                 Deadline
             </label>
             <input
+                wire:model="deadline"
                 id="deadline"
                 type="date"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
