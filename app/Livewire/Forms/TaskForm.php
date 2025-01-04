@@ -25,4 +25,8 @@ class TaskForm extends Form
 
     #[Rule('required')]
     public $deadline;
+
+    public function create() {
+        auth()->user()->tasks()->create($this->all());
+    }
 }

@@ -13,10 +13,8 @@ class TasksIndex extends Component
     public function save()
     {
         $this->validate();
-
-        auth()->user()->tasks()->create($this->form->all());
-
-        $this->reset();
+        $this->form->create();
+        $this->form->reset();
     }
 
     public function render()
