@@ -13,6 +13,7 @@ class TasksForm extends Component
     {
         $this->validate();
         $this->form->create();
+        $this->dispatch('task-created');
         $this->form->reset();
     }
 
