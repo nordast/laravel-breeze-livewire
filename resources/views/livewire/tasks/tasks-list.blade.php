@@ -16,5 +16,9 @@
 
             </div>
         @endforeach
+
+        <div class="mt-2 mb-12 p-2">
+            {{ $tasks->links() }}
+        </div>
     </div>
 </div>
