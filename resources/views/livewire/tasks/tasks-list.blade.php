@@ -1,9 +1,9 @@
 <div class="w-7/12">
 
-    <livewire:tasks.tasks-count :$tasksByStatus />
+    <livewire:tasks.tasks-count :tasksByStatus="$this->tasksByStatus" />
 
     <div class="px-6">
-        @foreach ($tasks as $task)
+        @foreach ($this->tasks as $task)
             <div
                 class="my-4 px-4 py-6 bg-white rounded-lg shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                 <div class="p-4 leading-normal">
@@ -33,7 +33,7 @@
         @endforeach
 
         <div class="mt-2 mb-12 p-2">
-            {{ $tasks->links() }}
+            {{ $this->tasks->links() }}
         </div>
     </div>
 </div>

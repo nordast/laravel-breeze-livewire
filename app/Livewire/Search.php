@@ -2,10 +2,12 @@
 
 namespace App\Livewire;
 
+use Livewire\Attributes\Url;
 use Livewire\Component;
 
 class Search extends Component
 {
+    #[Url(as: 'q')]
     public $search;
 
     public function render()
