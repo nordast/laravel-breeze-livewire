@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Tasks;
 
+use App\Models\Task;
 use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\On;
 use Livewire\Component;
@@ -27,5 +28,10 @@ class TasksList extends Component
     public function placeholder()
     {
         return view('skeleton');
+    }
+
+    public function changeStatus($id, $status) {
+        $task = Task::find($id);
+        $task->update(['status' => $status]);
     }
 }
