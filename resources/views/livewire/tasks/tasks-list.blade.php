@@ -1,4 +1,7 @@
 <div class="w-7/12">
+
+    <livewire:tasks.tasks-count :count="$count" />
+
     <div class="px-6">
         @foreach ($tasks as $task)
             <div
