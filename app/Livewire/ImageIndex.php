@@ -14,17 +14,46 @@ class ImageIndex extends Component
     #[Rule('image|max:1024')]
     public $image;
 
-    public function save()
+    #[Rule('required')]
+    #[Rule(['images.*' => 'image|max:1024'])]
+    public $images = [];
+
+    public function saveImage()
     {
         $this->validate();
 
-        $name = $this->image->getHashedName();
+        $name = $this->image->hashedName();
         $path = $this->image->storeAs('images', $name, 'public');
 
         Image::create([
             'name' => $name,
             'path' => $path,
         ]);
+
+        $this->reset();
+    }
+
+    public function saveImages()
+    {
+        $this->validate();
+
+        $images = [];
+
+        if (!is_null($this->images)) {
+            foreach ($this->images as $photo) {
+                $name = $this->image->hashedName();
+                $path = $this->image->storeAs('images', $name, 'public');
+
+                $images = [
+                    'name' => $name,
+                    'path' => $path,
+                ];
+            }
+        }
+
+        foreach ($images as $image) {
+            Image::create($image);
+        }
 
         $this->reset();
     }
