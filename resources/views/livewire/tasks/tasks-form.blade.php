@@ -146,6 +146,7 @@
 
                 </button>
                 <button
+                    wire:click="refresh"
                     type="button"
                     class="flex py-2 px-4 bg-slate-400 hover:bg-slate-500 text-white rounded-md">
                     Refresh
